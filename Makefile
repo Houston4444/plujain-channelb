@@ -23,7 +23,7 @@ SRC = $(wildcard src/*.cpp)
 OBJ = $(SRC:.cpp=.o)
 
 # plugin name
-PLUGIN = $(NAME).so
+PLUGIN = channelb.so
 
 $(PLUGIN): $(OBJ)
 	$(CXX) $(LDFLAGS) $(OBJ) -o $(PLUGIN) $(LIBS)
