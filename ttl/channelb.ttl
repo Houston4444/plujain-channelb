@@ -1,0 +1,130 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+@prefix epp: <http://lv2plug.in/ns/ext/port-props#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix mod: <http://moddevices.com/ns/modgui#>.
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+<http://plujain/plugins/channelb>
+a lv2:Plugin, lv2:UtilityPlugin;
+
+doap:name "ChannelB";
+
+doap:developer [
+    foaf:name "Houston4444";
+    foaf:homepage <>;
+    foaf:mbox <mailto:4444houston@gmail.com>;
+    ];
+
+doap:maintainer [
+    foaf:name "Houston4444";
+    foaf:homepage <>;
+    foaf:mbox <mailto:4444houston@gmail.com>;
+    ];
+
+    lv2:minorVersion 1;
+    lv2:microVersion 1;
+
+doap:license <GPL>;
+
+rdfs:comment """
+If actived, this switchbox send its input to the second output, else the input is sent to first output.
+The switch is applyed with a crossfade, default crossfade is set to 50ms for clean but fast switch.
+You can set the fade length to 1000 seconds max (more than 16 minutes) to make a very progressive switch.
+
+""";
+
+lv2:port
+[
+    a lv2:AudioPort, lv2:InputPort;
+    lv2:index 0;
+    lv2:symbol "In";
+    lv2:name "In";
+],
+[
+    a lv2:AudioPort, lv2:OutputPort;
+    lv2:index 1;
+    lv2:symbol "Out1";
+    lv2:name "Out 1";
+],
+[
+    a lv2:AudioPort, lv2:OutputPort;
+    lv2:index 2;
+    lv2:symbol "Out2";
+    lv2:name "Out 2";
+],
+[
+    a lv2:InputPort, lv2:ControlPort ;
+    lv2:index 3 ;
+    lv2:symbol "channelB" ;
+    lv2:name "ChannelB" ;
+    lv2:default 0 ;
+    lv2:minimum 0 ;
+    lv2:maximum 1 ;
+    lv2:portProperty lv2:integer ;
+    lv2:portProperty lv2:toggled ;
+    lv2:designation lv2:enabled ;
+],
+[
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 4;
+    lv2:symbol "clab";
+    lv2:name "CrossLength AB";
+    lv2:default 50;
+    lv2:minimum 0;
+    lv2:maximum 1000;
+],
+[
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 5;
+    lv2:symbol "unitsAB";
+    lv2:name "fade units AB";
+    lv2:portProperty lv2:integer;
+    lv2:portProperty lv2:enumeration ;
+        lv2:scalePoint [rdfs:label "ms"; rdf:value 0];
+        lv2:scalePoint [rdfs:label "seconds"; rdf:value 1];
+    lv2:default 0;
+    lv2:minimum 0;
+    lv2:maximum 1;
+],
+[
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 6;
+    lv2:symbol "ShapeAB";
+    lv2:name "Shape AB";
+    lv2:default 0;
+    lv2:minimum -1;
+    lv2:maximum 1;
+],
+[
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 7;
+    lv2:symbol "clba";
+    lv2:name "CrossLength BA";
+    lv2:default 50;
+    lv2:minimum 0;
+    lv2:maximum 1000;
+],
+[
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 8;
+    lv2:symbol "unitsBA";
+    lv2:name "fade units BA";
+    lv2:portProperty lv2:integer;
+    lv2:portProperty lv2:enumeration ;
+        lv2:scalePoint [rdfs:label "ms"; rdf:value 0];
+        lv2:scalePoint [rdfs:label "seconds"; rdf:value 1];
+    lv2:default 0;
+    lv2:minimum 0;
+    lv2:maximum 1;
+],
+[
+    a lv2:ControlPort, lv2:InputPort;
+    lv2:index 9;
+    lv2:symbol "ShapeBA";
+    lv2:name "Shape BA";
+    lv2:default 0;
+    lv2:minimum -1;
+    lv2:maximum 1;
+].
