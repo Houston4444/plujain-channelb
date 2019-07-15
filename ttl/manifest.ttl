@@ -5,3 +5,4 @@
     lv2:binary <channelb.so> ;
     rdfs:seeAlso <channelb.ttl>.
 
+<http://plujain/plugins/channelb> rdfs:seeAlso <modgui.ttl> .

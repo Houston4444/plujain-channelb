@@ -1,0 +1,41 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://plujain/plugins/channelb>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-channelb.html> ;
+        modgui:stylesheet <modgui/stylesheet-channelb.css> ;
+        modgui:screenshot <modgui/screenshot-channelb.png> ;
+        modgui:thumbnail <modgui/thumbnail-channelb.png> ;
+        modgui:brand "plujain" ;
+        modgui:label "ChannelB" ;
+        modgui:model "boxy-small" ;
+        modgui:panel "1-footswitch" ;
+        modgui:color "orange" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "clab" ;
+            lv2:name "CrossLength AB" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "unitsAB" ;
+            lv2:name "fade units AB" ;
+        ] , [
+            lv2:index 2 ;
+            lv2:symbol "ShapeAB" ;
+            lv2:name "Shape AB" ;
+        ] , [
+            lv2:index 3 ;
+            lv2:symbol "clba" ;
+            lv2:name "CrossLength BA" ;
+        ] , [
+            lv2:index 4 ;
+            lv2:symbol "unitsBA" ;
+            lv2:name "fade units BA" ;
+        ] , [
+            lv2:index 5 ;
+            lv2:symbol "ShapeBA" ;
+            lv2:name "Shape BA" ;
+        ] ;
+    ] .
