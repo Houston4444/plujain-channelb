@@ -1,4 +1,4 @@
--- README FOR PLUJAIN-CHANNELB --
+## README FOR PLUJAIN-CHANNELB
 
 ChannelB is a very simple LV2 utility plugin.<br>
 This is a mono switchbox with one input and two outputs.<br>
