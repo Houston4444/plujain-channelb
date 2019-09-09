@@ -6,9 +6,9 @@ If actived, this switchbox send its input to the second output, else the input i
 The switch is applyed with a crossfade, default crossfade is set to 50ms for clean but fast switch.<br>
 You can set the fade length up to 1000 seconds max (more than 16 minutes) to make a very progressive switch.<br>
 
+### Installation
 There are no particular dependencies except these ones needed to build an LV2 plugin.
 
 To build and install just type: <br>
 `$ make clean && make` <br>
 `$ [sudo] make install`
-
